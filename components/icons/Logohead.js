@@ -1,4 +1,4 @@
-const LogoHead = ({ width = 94 }) => {
+const Logohead = ({ width = 94 }) => {
     return (
         // <svg width={width} height="25" viewBox="0 0 94 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         //     <path d="M49.6184 12.2949L37.5949 33.9473H41.2074H61.5071L49.6184 12.2949ZM54.3092 29.8722H44.8198L49.5915 21.0292L54.3092 29.8722Z" fill="currentColor"/>
@@ -17,4 +17,4 @@ const LogoHead = ({ width = 94 }) => {
 
     )
 }
-export default LogoHead;
+export default Logohead;

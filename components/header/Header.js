@@ -5,7 +5,7 @@ import MobileNavigation from '@/navigation/MobileNavigation';
 import Logo from '@/icons/Logo';
 import Langugae from '@/header/Langugae';
 import TextLoop from '../herosection/TextLoop';
-import LogoHead from '../icons/LOgohead';
+import LogoHead from '../icons/Logohead';
 
 export default function Header({ noImageHeader }) {
     const header = useRef();
