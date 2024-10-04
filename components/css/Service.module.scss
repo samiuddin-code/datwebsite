@@ -1,0 +1,61 @@
+.minImageHeight{
+    min-height:300px;
+    @screen sm{
+        min-height:350px;
+    }
+    @screen lg{
+        min-height:auto;
+    }
+}
+
+.ban__data {
+    a{
+        @apply underline text-green-900;
+    }
+    p{
+        @apply mb-4;
+    }
+    h2,h3,h4,h5,h6
+    {
+        @apply font-bold mb-4;
+    }
+    h2{
+        font-size:1.4rem;
+    }
+    h3{
+        font-size:1.3rem;
+    }
+    h4{
+        font-size:1.2rem;
+    }
+    h5{
+        font-size:1.1rem;
+    }
+    h6{
+        @apply text-base;
+    }
+    blockquote,q{
+        @apply italic opacity-80 mb-6 text-xl relative;
+        &:before,&:after{
+            content:'"';
+            @apply text-gray-900 text-3xl mx-2;
+        }
+    }
+    ul,ol{
+        @apply mb-4 pl-6;
+        li{
+            @apply mb-2 last:mb-0;
+        }
+    }
+    ul{
+        @apply list-disc;
+    }
+    ol{
+        @apply list-decimal;
+    }
+}
+.image__card{
+    @screen lg{
+        min-height:410px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "short_name": "DAT",
+  "name": "DAT Consultancy | Powered by engineers",
+  "icons": [
+    {
+      "src": "/images/apple-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://datconsultancy.com",
+  "background_color": "#137749",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#137749"
+}

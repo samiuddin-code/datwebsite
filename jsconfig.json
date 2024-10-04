@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        /* component start */
+        "@/components/*": ["components/*"],
+        "@/banners/*": ["components/banners/*"],
+        "@/blogs/*": ["components/blogs/*"],
+        "@/footer/*": ["components/footer/*"],
+        "@/cookies/*": ["components/cookies/*"],
+        "@/header/*": ["components/header/*"],
+        "@/navigation/*": ["components/header/navigation/*"],
+        "@/helpers/*": ["components/helpers/*"],
+        "@/herosection/*": ["components/herosection/*"],
+        "@/icons/*": ["components/icons/*"],
+        "@/service/*": ["components/service/*"],
+        "@/swiper/*": ["components/swiper/*"],
+        "@/ui/*": ["components/ui/*"],
+        "@/forms/*": ["components/ui/forms/*"],
+        "@/modals/*": ["components/ui/modals/*"],
+        "@/carrer/*": ["components/carrer/*"],
+        "@/css/*": ["components/css/*"],
+        "@/apiData/*": ["components/api_data/*"],
+        /* component end */
+        "@/public/*":["public/*"],
+        "@/images/*":["public/images/*"],
+        "@/sass/*":["public/scss/*"],
+        "@/context/*":["context/*"],
+      }
+    }
+  }

@@ -1,0 +1,7 @@
+/* slider overlay */
+.slider__overlay{
+    background:linear-gradient(180deg, rgba(28, 35, 33, 0.8) 0%, rgba(28, 35, 33, 0) 67.19%);
+}
+.slider__height{
+    @apply h-screen;
+}

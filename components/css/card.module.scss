@@ -1,0 +1,16 @@
+.card__fixed__height{
+    min-height:220px;
+}
+.card__fixed__height__nodesc{
+    min-height:150px;
+}
+.card__contact__height{
+    min-height:170px;
+}
+.card__hover{
+    @apply px-4;
+}
+
+.card__project__height{
+    min-height: 120px;
+}
