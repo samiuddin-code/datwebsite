@@ -32,27 +32,44 @@ const ProjectCategory = ({response}) => {
         <Layout apiData={response} noImageHeader={true}>
             <Meta title={seoData.title} description={seoData.description} keywords={seoData.keywords} image={seoData.image} />
             <section className={(preloader ? "opacity-70 pointer-events-none" : "opacity-100 pointer-events-auto") + " py-16 lg:py-20 pt-8 lg:pt-40 relative lg:animate-to-top"}>
-                <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8">
-                    <SectionHeader heading="Our Projects" classList="-mt-4" animate={false}/>
-                    <div className="grid grid-cols-1 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {
-                           categoryList.map((item,index) => (
-                                <Card key={item.title} heading={item.title} interactive={index>2 ? true :false} imageHover={true} fixedHeight={false} buttonData={{enabled:true,link:`/projects/${(item.slug)}`,text:"View Projects",icon:true}} classList="mt-4">
-                                    <ExternalImage src={item.image} layout="responsive" className="filter blur-none group-hover:blur-sm" alt={item.title} width={352} height={260} objectFit="cover" />
-                                </Card>
-                            ))
-                        }
-                    </div>
-                    {
-                        (categoryData?.count != categoryList.length ) &&
-                        <div className="mt-16 lg:mt-20 flex interactive-element top">
-                            <div className="w-full text-center">
-                                <SubmitButton onClick={loadData} text="Load More" classList="bg-gray-900 text-white" icon={false}/>
-                            </div>
+    <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8">
+        <SectionHeader heading="Our Projects" classList="-mt-4" animate={false}/>
+        <div className="grid grid-cols-1 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                categoryList.map((item, index) => (
+                    <Card 
+                        key={item.title} 
+                        heading={item.title} 
+                        interactive={index > 2} 
+                        imageHover={true} 
+                        fixedHeight={false} 
+                        buttonData={{ enabled: true, link: `/projects/${item.slug}`, text: "View Projects", icon: true }} 
+                        classList="mt-4"
+                    >
+                        {/* Set a fixed height for the image container */}
+                        <div className="relative h-[260px] w-full overflow-hidden"> {/* Adjust height as needed */}
+                            <ExternalImage 
+                                src={item.image} 
+                                layout="fill" // Use layout fill for absolute positioning
+                                className="object-cover filter blur-none group-hover:blur-sm" // Ensure it covers the container
+                                alt={item.title} 
+                            />
                         </div>
-                    }
+                    </Card>
+                ))
+            }
+        </div>
+        {
+            (categoryData?.count !== categoryList.length) &&
+            <div className="mt-16 lg:mt-20 flex interactive-element top">
+                <div className="w-full text-center">
+                    <SubmitButton onClick={loadData} text="Load More" classList="bg-gray-900 text-white" icon={false}/>
                 </div>
-            </section>
+            </div>
+        }
+    </div>
+</section>
+
         </Layout>
     )
 }

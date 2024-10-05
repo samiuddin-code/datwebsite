@@ -3,6 +3,9 @@ import NProgress from 'nprogress'; //nprogress module
 import '@/sass/public.scss'
 import { GlobalProvider } from '@/context/GlobalState';
 import axios from "axios";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 //Binding events. 
 Router.events.on('routeChangeStart', () => NProgress.start()); 
 Router.events.on('routeChangeComplete', () => NProgress.done()); 

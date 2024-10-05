@@ -6,12 +6,16 @@
     "start": "next start -p 5017"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.2",
     "axios": "^1.7.7",
     "babel-polyfill": "^6.26.0",
     "draft-js": "^0.11.7",
     "html-react-parser": "^1.2.8",
     "moment": "^2.29.1",
     "next": "^14.2.14",
+    "next-i18next": "^15.3.1",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-calendar": "^3.4.0",
@@ -19,17 +23,18 @@
     "react-datepicker": "^4.2.1",
     "react-dom": "^18.2.0",
     "react-moment": "^1.1.1",
-    "react-smooth-scrollbar": "^8.0.6",
+    "react-slick": "^0.30.2",
     "sass": "^1.37.5",
+    "slick-carousel": "^1.8.1",
     "smooth-scrollbar": "^8.6.3",
     "smooth-scrollbar-react": "^2.3.0",
-    "swr": "^1.0.0",
-    "tailwindcss": "^3.4.13"
+    "swr": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "swiper": "^6.8.1",
+    "tailwindcss": "^2.2.19",
     "tailwindcss-nested-groups": "^1.2.4"
   }
 }
