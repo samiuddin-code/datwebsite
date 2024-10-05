@@ -169,7 +169,7 @@ function ProjectSection({ projects }) {
                                 width: '100%',
                                 transition: 'background-color 0.3s ease',
                                 '&:hover': {
-                                    backgroundColor: '#A6D7A0',
+                                    backgroundColor: '#18784c',
                                     color: 'white',
                                 },
                             }}
@@ -187,7 +187,7 @@ function ProjectSection({ projects }) {
                                 width: '100%',
                                 transition: 'background-color 0.3s ease',
                                 '&:hover': {
-                                    backgroundColor: '#A6D7A0',
+                                    backgroundColor: '#18784c',
                                     color: 'white',
                                 },
                             }}
