@@ -1,57 +1,49 @@
 import Moment from 'react-moment';
 import Link from 'next/link';
 import SectionHeader from '@/ui/SectionHeader';
-import Card from '@/ui/Card';
 import ExternalImage from '@/ui/ExternalImage';
-import LinkAnchor from '@/ui/LinkAnchor';
+
 const BlogSection = ({ data }) => {
     return (
         <section className="py-8 lg:py-12">
-            <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8">
-                <SectionHeader span="Powered by engineers" heading="News &amp; Blog:" />
-                <div className="flex flex-col lg:flex-row">
-                    <div className="w-full lg:w-7/12 lg:pr-8 xl:pr-24">
-                        {
-                            data.slice(1, 4).map(item => (
-                                <div key={item.title} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 mb-10 last:mb-0 group interactive-element top">
-                                    <div className="h-40 sm:h-60 md:h-[12rem] relative mb-6 md:mb-0 overflow-hidden">
-                                        <Link href={`/blog/${item.slug}`}>
-                                            <ExternalImage layout="fill" objectFit="cover" className="cursor-pointer group-hover:scale-125 transition-all transform duration-300 in-expo" alt={item.title} src={item.altImage} />
-                                        </Link>
-                                    </div>
-                                    <div className="flex h-100 justify-center flex-col">
-                                        <span className="text-gray-800">
-                                            <Moment format="DD/MM/YYYY">{item.createdAt}</Moment>
-                                        </span>
-                                        <Link href={`/blog/${item.slug}`}>
-                                            <h2 className="font-medium text-xl my-4 leading-snug cursor-pointer line-clamp line-clamp-4 ">{item.title}</h2>
-                                        </Link>
-                                        <LinkAnchor
-                                            text="Read blog"
-                                            icon="true"
-                                            link={`/blog/${item.slug}`}
+            <div className="max-w-6xl mx-auto px-8">
+                <SectionHeader span="Powered by engineers" heading="News &amp; Blog" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {data.slice(0, 6).map((item, index) => (
+                        <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <Link href={`/blog/${item.slug}`}>
+                                <div>
+                                    <div className="relative h-80 w-full">
+                                        <ExternalImage
+                                            layout="fill"
+                                            objectFit="cover"
+                                            className="transition-transform duration-300 transform group-hover:scale-105"
+                                            alt={item.title}
+                                            src={item.altImage}
                                         />
+                                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                                    </div>
+                                    <div className="absolute top-4 left-4 bg-white bg-opacity-80 px-3 py-1 rounded-full text-sm font-semibold">
+                                        {item.type || 'Blog'}
+                                    </div>
+                                    <div className="absolute bottom-4 left-4 text-white">
+                                        <Moment format="DD/MM/YYYY" className="block text-sm mb-2" >{item.createdAt}</Moment>
+                                        <h2 className="text-lg font-bold leading-tight">{item.title}</h2>
+                                        <div className="mt-2 flex items-center text-sm underline">
+                                            <span>See more</span>
+                                            <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
-                            ))
-                        }
-                    </div>
-                    {
-                        data && data[0] && <>
-                        <div className="w-full lg:w-5/12 hidden lg:block">
-                        <div className="px-6 pt-6 pb-12 border border-gray-900">
-                            <Card heading={data[0].title} imageSource={data[0].image} span={<Moment format="DD/MM/YYYY">{data[0].createdAt}</Moment>} buttonData={{ enabled: true, link: `/blog/${data[0].slug}`, text: "Read blog", icon: true }} fixedHeight={false} interactive={true}>
-                                <div className="h-80 relative overflow-hidden">
-                                    <ExternalImage layout="fill" objectFit="cover" className="group-hover:scale-125 transform transition-all duration-300 in-expo " alt={data[0].title} src={data[0].altImage} />
-                                </div>
-                            </Card>
+                            </Link>
                         </div>
-                    </div>   
-                        </>
-                    }
+                    ))}
                 </div>
             </div>
         </section>
-    )
-}
-export default BlogSection
+    );
+};
+
+export default BlogSection;

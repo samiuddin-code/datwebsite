@@ -74,25 +74,59 @@ function Home({ response }) {
         <BannerSection content={richText.highlight} />
         {/* who we are & why choose us section */}
         <section className="pt-16 lg:pt-20 relative interactive-element top">
-          <div className="lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto lg:px-8">
-            <div className="relative flex flex-col mb-20 lg:flex-row">
-              <div className="w-full lg:pr-28 2xl:pr-40 lg:w-5/12 ">
-                <h2 className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 mb-16 text-xl lg:text-2xl xl:text-3xl leading-tight ">{sectionWithImage[0].highlight}</h2>
-                <div className="lg:absolute lg:right-0 lg:w-7/12 lg:top-0 overflow-hidden">
-                  <div className="relative h-80 mb-10">
-                    <ExternalImage src={sectionWithImage[0].image} className="hover:scale-125 transform transition-all duration-300 custom-transition" layout="fill" objectFit="cover" folder="uploads/generalSections" alt={sectionWithImage[0].imageAlt} />
-                  </div>
-                </div>
-                <p className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 text-lg leading-8 mb-10 2xl:mb-16">{sectionWithImage[0].shortInfo}</p>
-                <div className="lg:absolute lg:right-0 lg:w-7/12 lg:bottom-0 overflow-hidden">
-                  <div className="relative h-80 mb-10 lg:mb-0">
-                    <ExternalImage src={sectionWithImage[1].image} layout="fill" className="hover:scale-125 transform transition-all duration-300 custom-transition" folder="uploads/generalSections" objectFit="cover" alt={sectionWithImage[1].imageAlt} />
-                  </div>
-                </div>
-                <p className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 text-lg leading-8">{sectionWithImage[1].highlight}</p>
-              </div>
-            </div>
-          </div>
+        <div className="lg:max-w-6xl mx-auto lg:px-8 mb-20">
+  <div className="flex flex-col lg:flex-row lg:space-x-8">
+    
+    {/* Left Section: Text */}
+    <div className="lg:w-1/2">
+      <h2 className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 mb-16 text-xl lg:text-2xl xl:text-3xl leading-tight">
+        {sectionWithImage[0].highlight}
+      </h2>
+
+      <p className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 text-lg leading-8 mb-10 2xl:mb-16">
+        {sectionWithImage[0].shortInfo}
+      </p>
+    </div>
+
+    {/* Right Section: First Image */}
+    <div className="lg:w-1/2">
+      <div className="relative h-80 mb-10">
+        <ExternalImage
+          src={sectionWithImage[0].image}
+          className="hover:scale-125 transform transition-all duration-300 custom-transition"
+          layout="fill"
+          objectFit="cover"
+          folder="uploads/generalSections"
+          alt={sectionWithImage[0].imageAlt}
+        />
+      </div>
+    </div>
+  </div>
+
+  {/* Second Text Section */}
+  <div className="flex flex-col lg:flex-row lg:space-x-8 mt-10">
+    <div className="lg:w-1/2">
+      <p className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 lg:px-0 text-lg leading-8">
+        {sectionWithImage[1].highlight}
+      </p>
+    </div>
+
+    {/* Right Section: Second Image */}
+    <div className="lg:w-1/2">
+      <div className="relative h-80 mb-10">
+        <ExternalImage
+          src={sectionWithImage[1].image}
+          className="hover:scale-125 transform transition-all duration-300 custom-transition"
+          layout="fill"
+          objectFit="cover"
+          folder="uploads/generalSections"
+          alt={sectionWithImage[1].imageAlt}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
           <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-8 interactive-element top">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8">
               <div className="bg-gray-50 py-12 px-8 lg:pt-10 lg:pr-12 lg:pl-12 lg:pb-12">
